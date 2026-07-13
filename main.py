@@ -314,6 +314,10 @@ async def chat(request: ChatRequest):
         return ChatResponse(
             response="Извини, произошла техническая ошибка. Попробуй ещё раз или свяжись со мной напрямую через Telegram @gpopovdev"
         )
+    
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy"}
 
 @app.get("/")
 async def root():
